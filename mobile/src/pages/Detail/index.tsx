@@ -60,10 +60,10 @@ const Detail = () => {
             const responsePoint = await api.get(`points/${routeParams.point_id}`);
             setData(responsePoint.data);
 
-            const responseCity = await getCity(data.point.city);
+            const responseCity = await getCity(responsePoint.data.point.city);
             setCity(responseCity)
 
-            const responseUf = await getUf(data.point.uf);
+            const responseUf = await getUf(responsePoint.data.point.uf);
             setUf(responseUf);
         }
         loadData();
